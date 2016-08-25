@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Customer.data;
+using CustomerOperations.data;
+using HotelReservation.Entities;
+
 
 namespace CustomerDB.test
 {
@@ -8,10 +10,25 @@ namespace CustomerDB.test
     public class customertest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestCostomerInsert()
         {
             CustomerDBImpl test = new CustomerDBImpl();
-            test.InsertCustomer("Shahrukh", "Khan", "abc@gmail.com", "9877548789");
+            Int64 result = test.InsertCustomer("Shahrukh1", "Khan1", "abc@gmail.com", "9877548789");
+            Assert.AreNotEqual(result, 0);
+
         }
+
+        [TestMethod]
+        public void TestCostomerSelect()
+        {
+            CustomerDBImpl test = new CustomerDBImpl();
+            Customer cust = test.SelectCustomer("Shreekesh");
+
+            Assert.AreEqual(cust.FirstName, "Shreekesh");
+        }
+
+
+
     }
+
 }

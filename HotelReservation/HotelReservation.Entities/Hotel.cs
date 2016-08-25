@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace HotelReservation.Entities
 {
-    public class Customer
+    public class Hotel
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailId { get; set; }
+        public int Hotel_Id { get; set; }
+        public string HotelName { get; set; }
+        public string HotelEmailId { get; set; }
         public string PhoneNumber { get; set; }
-    
+        public string City { get; set; }
+
+
     }
 }
