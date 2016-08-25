@@ -24,3 +24,5 @@ D:\Project\HotelReservation\CustomerDB.test\bin\Debug\Microsoft.Practices.Enterp
 D:\Project\HotelReservation\CustomerDB.test\obj\Debug\CustomerDB.test.csprojResolveAssemblyReference.cache
 D:\Project\HotelReservation\CustomerDB.test\obj\Debug\CustomerDB.test.dll
 D:\Project\HotelReservation\CustomerDB.test\obj\Debug\CustomerDB.test.pdb
+D:\Project\HotelReservation\CustomerDB.test\bin\Debug\HotelReservation.Entities.dll
+D:\Project\HotelReservation\CustomerDB.test\bin\Debug\HotelReservation.Entities.pdb
