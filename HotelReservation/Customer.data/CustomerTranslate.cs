@@ -11,11 +11,9 @@ namespace CustomerOperations.data
     {
         public static Customer ParseCustomer(DataSet customerdataset)
         {
-            if (customerdataset == null)
-                return null;
-            if (customerdataset.Tables.Count > 0)
-            {
-                if (customerdataset.Tables[0].Rows.Count > 0)
+            if (customerdataset == null) return null;
+
+            if (customerdataset.Tables.Count > 0 && customerdataset.Tables[0].Rows.Count > 0)
                 {
                     DataRow row = customerdataset.Tables[0].Rows[0];
                     Customer customer = new Customer();
@@ -26,7 +24,7 @@ namespace CustomerOperations.data
                     customer.PhoneNumber = row["PhoneNumber"].ToString();
                     return customer;
                 }
-            }
+            
             
             return null;
         }

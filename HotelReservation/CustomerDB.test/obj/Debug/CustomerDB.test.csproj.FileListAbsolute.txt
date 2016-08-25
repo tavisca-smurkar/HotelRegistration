@@ -15,14 +15,14 @@ D:\Project\HotelReservation\CustomerDB.test\bin\Debug\CustomerDB.test.dll.config
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\CustomerDB.test.dll
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\CustomerDB.test.pdb
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\Customer.data.dll
+D:\Project\HotelReservation\CustomerDB.test\bin\Debug\HotelReservation.Entities.dll
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\Customer.data.pdb
+D:\Project\HotelReservation\CustomerDB.test\bin\Debug\HotelReservation.Entities.pdb
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
 D:\Project\HotelReservation\CustomerDB.test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
 D:\Project\HotelReservation\CustomerDB.test\obj\Debug\CustomerDB.test.csprojResolveAssemblyReference.cache
 D:\Project\HotelReservation\CustomerDB.test\obj\Debug\CustomerDB.test.dll
 D:\Project\HotelReservation\CustomerDB.test\obj\Debug\CustomerDB.test.pdb
-D:\Project\HotelReservation\CustomerDB.test\bin\Debug\HotelReservation.Entities.dll
-D:\Project\HotelReservation\CustomerDB.test\bin\Debug\HotelReservation.Entities.pdb

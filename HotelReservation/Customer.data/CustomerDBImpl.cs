@@ -14,17 +14,21 @@ namespace CustomerOperations.data
     {
         private const string DBName = "HotelDB";
 
-        public void InsertCustomer(string firstname, string lastname, string emailid, string phonenumber)
+        public Int64 InsertCustomer(string firstname, string lastname, string emailid, string phonenumber)
         {
             DatabaseProviderFactory dbfactory = new DatabaseProviderFactory();
             Database defaultdatabase = dbfactory.CreateDefault();
             Database database = dbfactory.Create(DBName);
             DbCommand command = database.GetStoredProcCommand("spInsertCustomer");
-            database.AddInParameter(command, "FirstName", System.Data.DbType.String, firstname);
-            database.AddInParameter(command, "LastName", System.Data.DbType.String, lastname);
-            database.AddInParameter(command, "EmailId", System.Data.DbType.String, emailid);
-            database.AddInParameter(command, "PhoneNumber", System.Data.DbType.String, phonenumber);
-            database.ExecuteScalar(command);
+            database.AddInParameter(command, "@FirstName", System.Data.DbType.String, firstname);
+            database.AddInParameter(command, "@LastName", System.Data.DbType.String, lastname);
+            database.AddInParameter(command, "@EmailId", System.Data.DbType.String, emailid);
+            database.AddInParameter(command, "@PhoneNumber", System.Data.DbType.String, phonenumber);
+            //database.AddOutParameter(command, "@Cust_Id", System.Data.DbType.Int16, Int16.MaxValue);
+            Int64 customerId = Convert.ToInt64(database.ExecuteScalar(command).ToString());
+            return customerId;
+
+
         }
 
 

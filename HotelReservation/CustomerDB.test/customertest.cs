@@ -13,8 +13,8 @@ namespace CustomerDB.test
         public void TestCostomerInsert()
         {
             CustomerDBImpl test = new CustomerDBImpl();
-            test.InsertCustomer("Shahrukh", "Khan", "abc@gmail.com", "9877548789");
-
+            Int64 result = test.InsertCustomer("Shahrukh1", "Khan1", "abc@gmail.com", "9877548789");
+            Assert.AreNotEqual(result, 0);
 
         }
 
