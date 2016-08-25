@@ -1,0 +1,9 @@
+D:\HotelReservation\Customer.data\bin\Debug\Customer.data.dll
+D:\HotelReservation\Customer.data\bin\Debug\Customer.data.pdb
+D:\HotelReservation\Customer.data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\HotelReservation\Customer.data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\HotelReservation\Customer.data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\HotelReservation\Customer.data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\HotelReservation\Customer.data\obj\Debug\Customer.data.csprojResolveAssemblyReference.cache
+D:\HotelReservation\Customer.data\obj\Debug\Customer.data.dll
+D:\HotelReservation\Customer.data\obj\Debug\Customer.data.pdb
