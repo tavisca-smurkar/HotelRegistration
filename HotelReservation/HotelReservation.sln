@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelReservation", "HotelRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelReservation.Entities", "HotelReservation.Entities\HotelReservation.Entities.csproj", "{10AD3D3C-4C83-44A7-997B-50F37A6F32B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.data", "Customer.data\Customer.data.csproj", "{192022AE-E7E7-4BD1-BD2E-134AFB6C4A94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerOperations.data", "Customer.data\CustomerOperations.data.csproj", "{192022AE-E7E7-4BD1-BD2E-134AFB6C4A94}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerDB.test", "CustomerDB.test\CustomerDB.test.csproj", "{690E8182-3487-4B8B-941F-A1DB1DD0369D}"
 EndProject
