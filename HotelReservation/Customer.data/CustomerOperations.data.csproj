@@ -47,7 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerDBImpl.cs" />
+    <Compile Include="CustomerTranslate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HotelReservation.Entities\HotelReservation.Entities.csproj">
+      <Project>{10ad3d3c-4c83-44a7-997b-50f37a6f32b1}</Project>
+      <Name>HotelReservation.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

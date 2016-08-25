@@ -62,9 +62,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Customer.data\Customer.data.csproj">
+    <ProjectReference Include="..\Customer.data\CustomerOperations.data.csproj">
       <Project>{192022ae-e7e7-4bd1-bd2e-134afb6c4a94}</Project>
-      <Name>Customer.data</Name>
+      <Name>CustomerOperations.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelReservation.Entities\HotelReservation.Entities.csproj">
+      <Project>{10ad3d3c-4c83-44a7-997b-50f37a6f32b1}</Project>
+      <Name>HotelReservation.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
