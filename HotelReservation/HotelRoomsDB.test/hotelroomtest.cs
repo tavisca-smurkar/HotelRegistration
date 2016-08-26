@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HotelRoomsOperation.data;
 using HotelReservation.Entities;
+using System.Collections.Generic;
 
 namespace HotelRoomsDB.test
 {
@@ -21,10 +22,9 @@ namespace HotelRoomsDB.test
         [TestMethod]
         public void TestHotelRoomsSelect()
         {
+            List<HotelRooms> hotelRooms = test.SelectHotelRooms(5);
 
-            HotelRooms hotelRooms = test.SelectHotelRooms(5);
-
-            Assert.AreEqual(hotelRooms.Hotel_Id, 5);
+            Assert.AreEqual(hotelRooms[0].Hotel_Id, 5);
         }
 
         [TestMethod]

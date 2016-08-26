@@ -21,8 +21,21 @@ namespace BookingDetailsOperation.Data
             DbCommand command = database.GetStoredProcCommand("spInsertBookingDetails");
             database.AddInParameter(command, "@Cust_Id", System.Data.DbType.Int64, Cust_Id);
             database.AddInParameter(command, "@Hotel_Id", System.Data.DbType.Int64, Hotel_Id);
-                        
+
             Int64 bookingId = Convert.ToInt64(database.ExecuteScalar(command).ToString());
+            return bookingId;
+        }
+
+             public Int64 UpdateBookingDetails(Int64 Booking_Id)
+        {
+            DatabaseProviderFactory dbfactory = new DatabaseProviderFactory();
+            Database defaultdatabase = dbfactory.CreateDefault();
+            Database database = dbfactory.Create(DBName);
+
+            DbCommand command = database.GetStoredProcCommand("spUpdateBookingDetails");
+            database.AddInParameter(command, "@Booking_Id", System.Data.DbType.Int64, Booking_Id);
+           
+            Int64 bookingId = Convert.ToInt64(database.ExecuteNonQuery(command).ToString());
             return bookingId;
 
         }
