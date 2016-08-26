@@ -29,17 +29,17 @@ namespace HotelOperation.data
             
         }
 
-        public  Hotel SelectHotel(string HotelName)
+        public  List<Hotel> SelectHotel(string City)
         {
             DatabaseProviderFactory dbfactory = new DatabaseProviderFactory();
             Database defaultdatabase = dbfactory.CreateDefault();
             Database database = dbfactory.Create(DBName);
             DbCommand command = database.GetStoredProcCommand("spSelectHotel");
-            database.AddInParameter(command, "@HotelName", System.Data.DbType.String, HotelName);
-            
-            Hotel hotel = HotelTranslate.ParseHotel(database.ExecuteDataSet(command));
+            database.AddInParameter(command, "@City", System.Data.DbType.String, City);
+
+            List<Hotel> hotels= HotelTranslate.ParseHotel(database.ExecuteDataSet(command));
            
-            return hotel;
+            return hotels;
         }
     }
 }

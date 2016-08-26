@@ -49,6 +49,32 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookingDetailsOperation.Data\BookingDetailsOperation.Data.csproj">
+      <Project>{9892d494-e439-4258-a2b3-829795273fcd}</Project>
+      <Name>BookingDetailsOperation.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CitiesOperation.Data\CitiesOperation.Data.csproj">
+      <Project>{4d36f95d-ea36-4018-96ff-0a3b14351509}</Project>
+      <Name>CitiesOperation.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Customer.data\CustomerOperations.data.csproj">
+      <Project>{192022ae-e7e7-4bd1-bd2e-134afb6c4a94}</Project>
+      <Name>CustomerOperations.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelOperation.data\HotelOperation.data.csproj">
+      <Project>{43bd1262-d875-4bef-8e83-a697ed59088f}</Project>
+      <Name>HotelOperation.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelReservation.Entities\HotelReservation.Entities.csproj">
+      <Project>{10ad3d3c-4c83-44a7-997b-50f37a6f32b1}</Project>
+      <Name>HotelReservation.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelRoomsOperation.data\HotelRoomsOperation.data.csproj">
+      <Project>{ff168291-a392-47e4-875c-e55e3a5fe265}</Project>
+      <Name>HotelRoomsOperation.data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
