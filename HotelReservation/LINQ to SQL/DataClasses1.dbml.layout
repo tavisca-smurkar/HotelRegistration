@@ -32,14 +32,14 @@
         <elementListCompartment Id="e10fc6bd-7ee3-4dd8-b086-8834b3647cc4" absoluteBounds="3.765, 6.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 1.76044840494792); (3.5 : 1.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.76044840494792); (3.5 : 1.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/CustomerData/CustomerData_BookingDetail" />
       <nodes>
         <classShapeMoniker Id="79c84e14-75be-413f-8457-252db8846b74" />
         <classShapeMoniker Id="fb31ae80-ffa4-49ef-b84d-88567ebeb147" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.32619466145833); (3.59375 : 5.32619466145833); (3.59375 : 2.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.32619466145833); (3.59375 : 5.32619466145833); (3.59375 : 2.64589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/Hotel_Data/Hotel_Data_BookingDetail" />
       <nodes>
         <classShapeMoniker Id="76da5a5c-7d5f-424a-889d-94776ed023bb" />
