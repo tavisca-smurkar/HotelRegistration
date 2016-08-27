@@ -14,7 +14,7 @@ namespace HotelRoomsDB.test
         public void TestInsertHotelRooms()
         {
 
-            Int64 result = test.InsertHotelRooms(5, "AC", 15, 20);
+            Int64 result = test.InsertHotelRooms(5, "AC",700, 15, 20);
             Assert.AreNotEqual(result, 0);
         }
 
@@ -31,7 +31,7 @@ namespace HotelRoomsDB.test
         public void TestHotelRoomsUpdate()
         {
 
-            Int64 result = test.UpdateHotelRooms(5,"AC");
+            Int64 result = test.UpdateHotelRooms(5);
 
             Assert.AreNotEqual(result, 0);
         }

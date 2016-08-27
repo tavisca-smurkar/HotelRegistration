@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +74,10 @@
     <ProjectReference Include="..\HotelRoomsOperation.data\HotelRoomsOperation.data.csproj">
       <Project>{ff168291-a392-47e4-875c-e55e3a5fe265}</Project>
       <Name>HotelRoomsOperation.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LINQ to SQL\LINQ to SQL.csproj">
+      <Project>{45b522b7-6e66-48dd-83f3-64476d659bdd}</Project>
+      <Name>LINQ to SQL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
