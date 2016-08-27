@@ -70,7 +70,10 @@ namespace HotelReservation
 
 
                                             //Using LinQ to SQL
-                                            var CityDetails = from city in datacontext.CitiesDetails select city;
+
+
+
+                                            var CityDetails = datacontext.spShowCities();
                                             foreach (var city in CityDetails)
                                             {
                                                 Console.WriteLine("{0}  {1}", city.CityCode, city.CityName);
@@ -102,7 +105,7 @@ namespace HotelReservation
 
 
                                             //Using LinQ to SQL
-                                            var HotelDetailss = from hotel in datacontext.Hotel_Datas where hotel.City==citiname select hotel;
+                                            var HotelDetailss = datacontext.spSelectHotel(citiname);
                                             Console.WriteLine("HotelID\tHotelName\tHotelEmail\tPhoneNumber\tCity");
                                             foreach (var hotel in HotelDetailss)
                                             {
@@ -126,7 +129,7 @@ namespace HotelReservation
                                             //Int64 roomid = Int64.Parse(Console.ReadLine());
 
                                             //Using LinQ to SQL
-                                            var RoomDetails = from room in datacontext.HotelRooms where room.Hotel_Id == Hotel_id select room;
+                                            var RoomDetails = datacontext.spSelectHotelRooms(Hotel_id);
                                             Console.WriteLine("RoomID\tHotelId\tRoomType\tRates  \tAvai. Rooms\tTotalRooms");
                                             foreach (var room in RoomDetails)
                                             {
@@ -173,16 +176,13 @@ namespace HotelReservation
                                             Console.WriteLine("Phone Number");
                                             new_customer.PhoneNumber = Console.ReadLine();
 
-                                            datacontext.CustomerDatas.InsertOnSubmit(new_customer);
-                                            datacontext.SubmitChanges();
-
-                                            Int64 Cust_Id = new_customer.Cust_Id;
+                                           
+                                            Int64 Cust_Id = (Int64)datacontext.spInsertCustomer(new_customer.FirstName, new_customer.LastName, new_customer.EmailId, new_customer.PhoneNumber).SingleOrDefault().Column1.Value; //new_customer.Cust_Id;
 
                                             Console.WriteLine("Your customer id is {0} .", Cust_Id);
 
 
-
-
+                                                                                      
                                             //Storing booking details into database
 
                                             //Using StoreProcedure and Methods
@@ -194,22 +194,19 @@ namespace HotelReservation
                                             BookingDetail new_booking = new BookingDetail();
                                             new_booking.Cust_Id = Cust_Id;
                                             new_booking.Hotel_Id = Hotel_id;
-                                            new_booking.CheckInDate = DateTime.Now;
-                                            datacontext.BookingDetails.InsertOnSubmit(new_booking);
-                                            datacontext.SubmitChanges();
-
-                                            Console.WriteLine("Your booking id is {0}", new_booking.Booking_Id);
+                                            
+                                            Int64 New_Booking_Id =(Int64) datacontext.spInsertBookingDetails(new_booking.Cust_Id, new_booking.Hotel_Id).SingleOrDefault().Column1.Value;
+                                            Console.WriteLine("Your booking id is {0}", New_Booking_Id);
 
 
                                             //Updating hotel rooms database
-                                            
+
                                             //using store preocedure
                                             //HotelRommDBImple update_hotel_rooms = new HotelRommDBImple();
                                             //update_hotel_rooms.UpdateHotelRooms(roomid);
 
                                             //using linq to sql
-                                            var update_room = (from room in datacontext.HotelRooms where room.Room_Id == roomid select room).First();
-                                            update_room.AvailableRooms--;
+                                            datacontext.spUpdateHotelRooms(roomid);
                                             
                                             datacontext.SubmitChanges();
 
@@ -226,8 +223,7 @@ namespace HotelReservation
                                             //update_booking.UpdateBookingDetails(booking_id);
 
                                             //using linq to sql
-                                            var old_booking = (from booking in datacontext.BookingDetails where booking.Booking_Id == booking_id select booking).First();
-                                            old_booking.CheckOutDate = DateTime.Now;
+                                            datacontext.spUpdateBookingDetails(booking_id);
 
                                            
                                             datacontext.SubmitChanges();
@@ -302,11 +298,11 @@ namespace HotelReservation
 
                                             Console.WriteLine("Enter hotel's city");
                                             new_hotel.City = Console.ReadLine();
-                                            datacontext.Hotel_Datas.InsertOnSubmit(new_hotel);
-                                            datacontext.SubmitChanges();
 
-                                            if (new_hotel.Hotel_Id > 0)
-                                               Console.WriteLine("Hotel added successfully with hotel id {0}", new_hotel.Hotel_Id);
+                                            Int64 new_hotel_id =(Int64) datacontext.spInsertHotel(new_hotel.HotelName, new_hotel.HotelEmailID, new_hotel.HotelPhoneNumber, new_hotel.City).SingleOrDefault().Column1.Value;
+
+                                            if (new_hotel_id > 0)
+                                               Console.WriteLine("Hotel added successfully with hotel id {0}", new_hotel_id);
 
 
                                             break;
@@ -356,11 +352,10 @@ namespace HotelReservation
                                             Console.WriteLine("Enter Total rooms");
                                             new_room.TotalRooms = Convert.ToInt64(Console.ReadLine());
 
-                                            datacontext.HotelRooms.InsertOnSubmit(new_room);
-                                            datacontext.SubmitChanges();
+                                            Int64 new_room_id =(Int64) datacontext.spInsertHotelRooms(new_room.Hotel_Id, new_room.RoomType, new_room.Rates, new_room.AvailableRooms, new_room.TotalRooms).SingleOrDefault().Column1.Value;
 
-                                            if (new_room.Room_Id > 0)
-                                                    Console.WriteLine("Room added successfully with Room id {0}", new_room.Room_Id);
+                                            if (new_room_id > 0)
+                                                    Console.WriteLine("Room added successfully with Room id {0}", new_room_id);
 
 
 

@@ -47,4 +47,88 @@
       <Column Name="TotalRooms" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Function Name="dbo.spInsertBookingDetails" Method="spInsertBookingDetails">
+    <Parameter Name="Cust_Id" Parameter="cust_Id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Hotel_Id" Parameter="hotel_Id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spInsertBookingDetailsResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertCustomer" Method="spInsertCustomer">
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EmailId" Parameter="emailId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="spInsertCustomerResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertHotel" Method="spInsertHotel">
+    <Parameter Name="HotelName" Parameter="hotelName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="HotelEmailId" Parameter="hotelEmailId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spInsertHotelResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertHotelRooms" Method="spInsertHotelRooms">
+    <Parameter Name="Hotel_Id" Parameter="hotel_Id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="RoomType" Parameter="roomType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Rates" Parameter="rates" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="AvailableRooms" Parameter="availableRooms" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TotalRooms" Parameter="totalRooms" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spInsertHotelRoomsResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelectCustomer" Method="spSelectCustomer">
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spSelectCustomerResult">
+      <Column Name="Cust_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelectHotel" Method="spSelectHotel">
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spSelectHotelResult">
+      <Column Name="Hotel_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="HotelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HotelEmailID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HotelPhoneNumber" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spShowCities" Method="spShowCities">
+    <ElementType Name="spShowCitiesResult">
+      <Column Name="CityCode" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelectHotelRooms" Method="spSelectHotelRooms">
+    <Parameter Name="Hotel_Id" Parameter="hotel_Id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spSelectHotelRoomsResult">
+      <Column Name="Room_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Hotel_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RoomType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Rates" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AvailableRooms" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TotalRooms" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateBookingDetails" Method="spUpdateBookingDetails">
+    <Parameter Name="Booking_Id" Parameter="booking_Id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spUpdateBookingDetailsResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateHotelRooms" Method="spUpdateHotelRooms">
+    <Parameter Name="Room_Id" Parameter="room_Id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="spUpdateHotelRoomsResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

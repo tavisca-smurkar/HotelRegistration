@@ -116,6 +116,76 @@ namespace LINQ_to_SQL
 				return this.GetTable<HotelRoom>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertBookingDetails")]
+		public ISingleResult<spInsertBookingDetailsResult> spInsertBookingDetails([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cust_Id", DbType="BigInt")] System.Nullable<long> cust_Id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Hotel_Id", DbType="BigInt")] System.Nullable<long> hotel_Id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cust_Id, hotel_Id);
+			return ((ISingleResult<spInsertBookingDetailsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertCustomer")]
+		public ISingleResult<spInsertCustomerResult> spInsertCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FirstName", DbType="NVarChar(50)")] string firstName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LastName", DbType="NVarChar(50)")] string lastName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmailId", DbType="NVarChar(50)")] string emailId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhoneNumber", DbType="NVarChar(10)")] string phoneNumber)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), firstName, lastName, emailId, phoneNumber);
+			return ((ISingleResult<spInsertCustomerResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertHotel")]
+		public ISingleResult<spInsertHotelResult> spInsertHotel([global::System.Data.Linq.Mapping.ParameterAttribute(Name="HotelName", DbType="NVarChar(50)")] string hotelName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="HotelEmailId", DbType="NVarChar(50)")] string hotelEmailId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhoneNumber", DbType="NVarChar(10)")] string phoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="City", DbType="NVarChar(50)")] string city)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hotelName, hotelEmailId, phoneNumber, city);
+			return ((ISingleResult<spInsertHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertHotelRooms")]
+		public ISingleResult<spInsertHotelRoomsResult> spInsertHotelRooms([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Hotel_Id", DbType="BigInt")] System.Nullable<long> hotel_Id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RoomType", DbType="NVarChar(50)")] string roomType, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Rates", DbType="BigInt")] System.Nullable<long> rates, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AvailableRooms", DbType="BigInt")] System.Nullable<long> availableRooms, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalRooms", DbType="BigInt")] System.Nullable<long> totalRooms)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hotel_Id, roomType, rates, availableRooms, totalRooms);
+			return ((ISingleResult<spInsertHotelRoomsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spSelectCustomer")]
+		public ISingleResult<spSelectCustomerResult> spSelectCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FirstName", DbType="NVarChar(50)")] string firstName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), firstName);
+			return ((ISingleResult<spSelectCustomerResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spSelectHotel")]
+		public ISingleResult<spSelectHotelResult> spSelectHotel([global::System.Data.Linq.Mapping.ParameterAttribute(Name="City", DbType="NVarChar(50)")] string city)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), city);
+			return ((ISingleResult<spSelectHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spShowCities")]
+		public ISingleResult<spShowCitiesResult> spShowCities()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<spShowCitiesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spSelectHotelRooms")]
+		public ISingleResult<spSelectHotelRoomsResult> spSelectHotelRooms([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Hotel_Id", DbType="BigInt")] System.Nullable<long> hotel_Id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hotel_Id);
+			return ((ISingleResult<spSelectHotelRoomsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spUpdateBookingDetails")]
+		public ISingleResult<spUpdateBookingDetailsResult> spUpdateBookingDetails([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Booking_Id", DbType="BigInt")] System.Nullable<long> booking_Id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), booking_Id);
+			return ((ISingleResult<spUpdateBookingDetailsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spUpdateHotelRooms")]
+		public ISingleResult<spUpdateHotelRoomsResult> spUpdateHotelRooms([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Room_Id", DbType="BigInt")] System.Nullable<long> room_Id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), room_Id);
+			return ((ISingleResult<spUpdateHotelRoomsResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BookingDetails")]
@@ -994,6 +1064,518 @@ namespace LINQ_to_SQL
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class spInsertBookingDetailsResult
+	{
+		
+		private System.Nullable<decimal> _Column1;
+		
+		public spInsertBookingDetailsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spInsertCustomerResult
+	{
+		
+		private System.Nullable<decimal> _Column1;
+		
+		public spInsertCustomerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spInsertHotelResult
+	{
+		
+		private System.Nullable<decimal> _Column1;
+		
+		public spInsertHotelResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spInsertHotelRoomsResult
+	{
+		
+		private System.Nullable<decimal> _Column1;
+		
+		public spInsertHotelRoomsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spSelectCustomerResult
+	{
+		
+		private long _Cust_Id;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private string _EmailId;
+		
+		private string _PhoneNumber;
+		
+		public spSelectCustomerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cust_Id", DbType="BigInt NOT NULL")]
+		public long Cust_Id
+		{
+			get
+			{
+				return this._Cust_Id;
+			}
+			set
+			{
+				if ((this._Cust_Id != value))
+				{
+					this._Cust_Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(50)")]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this._FirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(50)")]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this._LastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailId", DbType="NVarChar(20)")]
+		public string EmailId
+		{
+			get
+			{
+				return this._EmailId;
+			}
+			set
+			{
+				if ((this._EmailId != value))
+				{
+					this._EmailId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NChar(10)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spSelectHotelResult
+	{
+		
+		private long _Hotel_Id;
+		
+		private string _HotelName;
+		
+		private string _HotelEmailID;
+		
+		private string _HotelPhoneNumber;
+		
+		private string _City;
+		
+		public spSelectHotelResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hotel_Id", DbType="BigInt NOT NULL")]
+		public long Hotel_Id
+		{
+			get
+			{
+				return this._Hotel_Id;
+			}
+			set
+			{
+				if ((this._Hotel_Id != value))
+				{
+					this._Hotel_Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HotelName", DbType="NVarChar(50)")]
+		public string HotelName
+		{
+			get
+			{
+				return this._HotelName;
+			}
+			set
+			{
+				if ((this._HotelName != value))
+				{
+					this._HotelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HotelEmailID", DbType="NVarChar(50)")]
+		public string HotelEmailID
+		{
+			get
+			{
+				return this._HotelEmailID;
+			}
+			set
+			{
+				if ((this._HotelEmailID != value))
+				{
+					this._HotelEmailID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HotelPhoneNumber", DbType="NVarChar(10)")]
+		public string HotelPhoneNumber
+		{
+			get
+			{
+				return this._HotelPhoneNumber;
+			}
+			set
+			{
+				if ((this._HotelPhoneNumber != value))
+				{
+					this._HotelPhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(50)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spShowCitiesResult
+	{
+		
+		private long _CityCode;
+		
+		private string _CityName;
+		
+		public spShowCitiesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityCode", DbType="BigInt NOT NULL")]
+		public long CityCode
+		{
+			get
+			{
+				return this._CityCode;
+			}
+			set
+			{
+				if ((this._CityCode != value))
+				{
+					this._CityCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityName", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string CityName
+		{
+			get
+			{
+				return this._CityName;
+			}
+			set
+			{
+				if ((this._CityName != value))
+				{
+					this._CityName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spSelectHotelRoomsResult
+	{
+		
+		private long _Room_Id;
+		
+		private long _Hotel_Id;
+		
+		private string _RoomType;
+		
+		private long _Rates;
+		
+		private long _AvailableRooms;
+		
+		private long _TotalRooms;
+		
+		public spSelectHotelRoomsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Room_Id", DbType="BigInt NOT NULL")]
+		public long Room_Id
+		{
+			get
+			{
+				return this._Room_Id;
+			}
+			set
+			{
+				if ((this._Room_Id != value))
+				{
+					this._Room_Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hotel_Id", DbType="BigInt NOT NULL")]
+		public long Hotel_Id
+		{
+			get
+			{
+				return this._Hotel_Id;
+			}
+			set
+			{
+				if ((this._Hotel_Id != value))
+				{
+					this._Hotel_Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RoomType
+		{
+			get
+			{
+				return this._RoomType;
+			}
+			set
+			{
+				if ((this._RoomType != value))
+				{
+					this._RoomType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rates", DbType="BigInt NOT NULL")]
+		public long Rates
+		{
+			get
+			{
+				return this._Rates;
+			}
+			set
+			{
+				if ((this._Rates != value))
+				{
+					this._Rates = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvailableRooms", DbType="BigInt NOT NULL")]
+		public long AvailableRooms
+		{
+			get
+			{
+				return this._AvailableRooms;
+			}
+			set
+			{
+				if ((this._AvailableRooms != value))
+				{
+					this._AvailableRooms = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalRooms", DbType="BigInt NOT NULL")]
+		public long TotalRooms
+		{
+			get
+			{
+				return this._TotalRooms;
+			}
+			set
+			{
+				if ((this._TotalRooms != value))
+				{
+					this._TotalRooms = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spUpdateBookingDetailsResult
+	{
+		
+		private System.Nullable<decimal> _Column1;
+		
+		public spUpdateBookingDetailsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spUpdateHotelRoomsResult
+	{
+		
+		private System.Nullable<decimal> _Column1;
+		
+		public spUpdateHotelRoomsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
 			}
 		}
 	}
