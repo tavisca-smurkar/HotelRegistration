@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HotelReservation" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SHREEKESHM\MSSQLSERVER2012;Initial Catalog=HotelReservation;User ID=sa" SettingsObjectName="LINQ_to_SQL.Properties.Settings" SettingsPropertyName="HotelReservationConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BookingDetails" Member="BookingDetails">
+    <Type Name="BookingDetail">
+      <Column Name="Booking_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cust_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Hotel_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CheckInDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CheckOutDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="CustomerData_BookingDetail" Member="CustomerData" ThisKey="Cust_Id" OtherKey="Cust_Id" Type="CustomerData" IsForeignKey="true" />
+      <Association Name="Hotel_Data_BookingDetail" Member="Hotel_Data" ThisKey="Hotel_Id" OtherKey="Hotel_Id" Type="Hotel_Data" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CitiesDetails" Member="CitiesDetails">
+    <Type Name="CitiesDetail">
+      <Column Name="CityCode" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustomerData" Member="CustomerDatas">
+    <Type Name="CustomerData">
+      <Column Name="Cust_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="CustomerData_BookingDetail" Member="BookingDetails" ThisKey="Cust_Id" OtherKey="Cust_Id" Type="BookingDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hotel_Data" Member="Hotel_Datas">
+    <Type Name="Hotel_Data">
+      <Column Name="Hotel_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HotelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HotelEmailID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HotelPhoneNumber" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Hotel_Data_BookingDetail" Member="BookingDetails" ThisKey="Hotel_Id" OtherKey="Hotel_Id" Type="BookingDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HotelRooms" Member="HotelRooms">
+    <Type Name="HotelRoom">
+      <Column Name="Room_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Hotel_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RoomType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Rates" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AvailableRooms" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TotalRooms" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
