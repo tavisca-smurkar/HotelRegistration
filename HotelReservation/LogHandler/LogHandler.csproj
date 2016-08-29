@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10AD3D3C-4C83-44A7-997B-50F37A6F32B1}</ProjectGuid>
+    <ProjectGuid>{0C114E68-00BA-4405-B26C-6F69F0106C8F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HotelReservation.Entities</RootNamespace>
-    <AssemblyName>HotelReservation.Entities</AssemblyName>
+    <RootNamespace>LogHandler</RootNamespace>
+    <AssemblyName>LogHandler</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,17 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cities.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="Hotel.cs" />
-    <Compile Include="HotelRooms.cs" />
-    <Compile Include="LogEntry.cs" />
+    <Compile Include="Logging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LINQ to SQL\LINQ to SQL.csproj">
-      <Project>{45b522b7-6e66-48dd-83f3-64476d659bdd}</Project>
-      <Name>LINQ to SQL</Name>
+    <ProjectReference Include="..\HotelReservation.Entities\HotelReservation.Entities.csproj">
+      <Project>{10ad3d3c-4c83-44a7-997b-50f37a6f32b1}</Project>
+      <Name>HotelReservation.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
