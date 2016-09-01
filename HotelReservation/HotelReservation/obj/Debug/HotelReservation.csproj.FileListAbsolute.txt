@@ -14,9 +14,11 @@ D:\Project\HotelReservation\HotelReservation\bin\Debug\HotelOperation.data.dll
 D:\Project\HotelReservation\HotelReservation\bin\Debug\HotelReservation.Entities.dll
 D:\Project\HotelReservation\HotelReservation\bin\Debug\HotelRoomsOperation.data.dll
 D:\Project\HotelReservation\HotelReservation\bin\Debug\LINQ to SQL.dll
+D:\Project\HotelReservation\HotelReservation\bin\Debug\log4net.dll
 D:\Project\HotelReservation\HotelReservation\bin\Debug\LogHandler.dll
 D:\Project\HotelReservation\HotelReservation\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\Project\HotelReservation\HotelReservation\bin\Debug\NLog.dll
+D:\Project\HotelReservation\HotelReservation\bin\Debug\NLog.Targets.Syslog.dll
 D:\Project\HotelReservation\HotelReservation\bin\Debug\BookingDetailsOperation.Data.pdb
 D:\Project\HotelReservation\HotelReservation\bin\Debug\CitiesOperation.Data.pdb
 D:\Project\HotelReservation\HotelReservation\bin\Debug\Customer.data.pdb
@@ -25,6 +27,7 @@ D:\Project\HotelReservation\HotelReservation\bin\Debug\HotelReservation.Entities
 D:\Project\HotelReservation\HotelReservation\bin\Debug\HotelRoomsOperation.data.pdb
 D:\Project\HotelReservation\HotelReservation\bin\Debug\LINQ to SQL.pdb
 D:\Project\HotelReservation\HotelReservation\bin\Debug\LogHandler.pdb
+D:\Project\HotelReservation\HotelReservation\bin\Debug\log4net.xml
 D:\Project\HotelReservation\HotelReservation\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
 D:\Project\HotelReservation\HotelReservation\bin\Debug\NLog.xml
 D:\Project\HotelReservation\HotelReservation\obj\Debug\HotelReservation.csprojResolveAssemblyReference.cache
