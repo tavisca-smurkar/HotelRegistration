@@ -11,16 +11,20 @@ using HotelReservation.Entities;
 using CustomerOperations.data;
 using BookingDetailsOperation.Data;
 using LINQ_to_SQL;
-using NLog;
+//using NLog;
+using log4net;
+using log4net.Config;
 using LogHandler;
 namespace HotelReservation
 {
     class Program
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Program));
         static void Main(string[] args)
         {
-            Logger logger = LogManager.GetCurrentClassLogger();
-            
+            XmlConfigurator.Configure();
+            //Logger logger = LogManager.GetCurrentClassLogger();
+
             do
             {
                 try
@@ -208,7 +212,7 @@ namespace HotelReservation
                                                 Int64 New_Booking_Id = (Int64)datacontext.spInsertBookingDetails(new_booking.Cust_Id, new_booking.Hotel_Id).SingleOrDefault().Column1.Value;
                                                 Console.WriteLine("Your booking id is {0}", New_Booking_Id);
 
-                                                logger.Trace("Customer with id {0} has searched for hotel with hotel id {1} on {2} at {3} .", Cust_Id, Hotel_id, DateTime.Now.Date, DateTime.Now.TimeOfDay);
+                                                logger.InfoFormat("Customer with id {0} has searched for hotel with hotel id {1} on {2} at {3} .", Cust_Id, Hotel_id, DateTime.Now.Date, DateTime.Now.TimeOfDay);
                                                 //Updating hotel rooms database
 
                                                 //using store preocedure
@@ -219,7 +223,7 @@ namespace HotelReservation
                                                 datacontext.spUpdateHotelRooms(roomid);
 
                                                 datacontext.SubmitChanges();
-
+                                                logger.InfoFormat("Available rooms with room in {0} of hotel with hotel id {1} are updated",roomid,Hotel_id);
                                                 break;
 
                                             case 2:
@@ -312,9 +316,10 @@ namespace HotelReservation
                                                 Int64 new_hotel_id = (Int64)datacontext.spInsertHotel(new_hotel.HotelName, new_hotel.HotelEmailID, new_hotel.HotelPhoneNumber, new_hotel.City).SingleOrDefault().Column1.Value;
 
                                                 if (new_hotel_id > 0)
+                                                {
                                                     Console.WriteLine("Hotel added successfully with hotel id {0}", new_hotel_id);
-
-
+                                                    logger.InfoFormat("Agent aaded new hotel with hotel id {0} .", new_hotel_id);
+                                                }
                                                 break;
 
                                             case 2:
@@ -365,9 +370,10 @@ namespace HotelReservation
                                                 Int64 new_room_id = (Int64)datacontext.spInsertHotelRooms(new_room.Hotel_Id, new_room.RoomType, new_room.Rates, new_room.AvailableRooms, new_room.TotalRooms).SingleOrDefault().Column1.Value;
 
                                                 if (new_room_id > 0)
+                                                {
                                                     Console.WriteLine("Room added successfully with Room id {0}", new_room_id);
-
-
+                                                    logger.InfoFormat("Agent aaded new room with room id {0} .", new_room_id);
+                                                }
 
                                                 break;
                                         }
@@ -393,7 +399,7 @@ namespace HotelReservation
                 }
                 catch (Exception e)
                 {
-                    logger.ErrorException(e.Message,e);
+                    logger.Error(e.Message);
                 }
                 Console.WriteLine("Do you want to continue or change your role? (y/n)");
             } while (Console.ReadLine() != "n");
