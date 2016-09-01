@@ -12,7 +12,6 @@ using CustomerOperations.data;
 using BookingDetailsOperation.Data;
 using LINQ_to_SQL;
 using NLog;
-using NLog.Targets.
 using LogHandler;
 namespace HotelReservation
 {
